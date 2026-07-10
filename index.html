@@ -226,6 +226,21 @@ section{padding:90px 7%;}
 }
 .btn-cta:hover{background:var(--brdk);border-color:var(--bronze);}
 
+/* DESTAQUE URGENTE (WhatsApp) */
+.destaque{position:relative;overflow:hidden;background:linear-gradient(160deg,#A61C1C 0%,#7A1414 100%);padding:80px 7%;text-align:center;}
+.destaque::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,0.07) 0%,transparent 45%),radial-gradient(circle at 85% 80%,rgba(0,0,0,0.19) 0%,transparent 50%);pointer-events:none;}
+.destaque-in{position:relative;z-index:1;max-width:560px;margin:0 auto;}
+.destaque-eye{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.11);border:1px solid rgba(255,255,255,0.19);border-radius:100px;padding:7px 16px;margin-bottom:22px;}
+.destaque-eye .dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:destaquePulse 1.6s ease-in-out infinite;}
+@keyframes destaquePulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.destaque-h{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(26px,3.6vw,40px);line-height:1.18;color:var(--creme);margin-bottom:16px;}
+.destaque-sub{font-size:15px;line-height:1.75;color:rgba(245,242,236,0.8);max-width:440px;margin:0 auto 34px;}
+.btn-wa{display:inline-flex;align-items:center;gap:11px;background:#25D366;color:#0d1f14;border:2px solid rgba(255,255,255,0.4);border-radius:100px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.01em;padding:18px 34px;text-decoration:none;cursor:pointer;box-shadow:0 10px 34px -6px rgba(0,0,0,0.63),0 0 0 6px rgba(37,211,102,0.13);transition:transform .15s ease,box-shadow .15s ease;}
+.btn-wa:hover{transform:translateY(-1px);box-shadow:0 14px 38px -6px rgba(0,0,0,0.69),0 0 0 8px rgba(37,211,102,0.19);}
+.btn-wa svg{flex-shrink:0;}
+.destaque-trust{margin-top:26px;font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.63);display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;}
+@media (prefers-reduced-motion:reduce){.destaque-eye .dot{animation:none;}}
+
 /* FOOTER */
 footer{background:var(--preto);padding:44px 7%;border-top:1px solid rgba(136,98,60,0.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
 .ft-esq{display:flex;align-items:center;gap:14px;}
@@ -479,6 +494,26 @@ footer{background:var(--preto);padding:44px 7%;border-top:1px solid rgba(136,98,
 </section>
 
 <div class="div"></div>
+
+<section class="destaque rv">
+  <div class="destaque-in">
+    <div class="destaque-eye"><span class="dot"></span>Prazo corre contra você</div>
+    <h2 class="destaque-h">Cada dia de espera pode custar o seu benefício.</h2>
+    <p class="destaque-sub">Prazos previdenciários não esperam. Fale agora com uma das nossas advogadas e descubra, de graça, se você tem direito.</p>
+    <a class="btn-wa" href="https://wa.me/5531996299968" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#0d1f14"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.005c5.46 0 9.9-4.45 9.9-9.91C21.94 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.29.58-.36.77-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.19-.15.31-.29.48-.15.17-.3.38-.44.51-.14.14-.3.29-.13.57.17.28.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.33 1.44.28.15.44.13.6-.05.17-.17.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+      Falar no WhatsApp agora
+    </a>
+    <div class="destaque-trust">
+      <span>✓ Diagnóstico gratuito</span>
+      <span>✓ 550+ casos atendidos</span>
+      <span>✓ Atendimento em todo o Brasil</span>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
 
 <section class="faq rv" id="faq">
   <span class="sec-eye">Dúvidas frequentes</span>
