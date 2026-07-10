@@ -6,7 +6,7 @@
 <title>Pacheco &amp; Portela Advocacia | Direito Previdenciário</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --creme:#F5F2EC; --creme2:#EDE8DF;
@@ -16,6 +16,7 @@
   --marrom2:#2E1F0E;
   --txt:#3A3028; --txtcl:#7A6D60;
   --branco:#FFFFFF;
+  --gold1:#F3CC7A; --gold2:#C8932E;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -47,16 +48,18 @@ nav{
 .nav-links a:hover{color:var(--brcl);}
 .nav-btn{
   display:inline-flex;align-items:center;gap:8px;
-  background:var(--bronze);color:var(--creme);
-  border:2px solid var(--brcl);
+  background:linear-gradient(135deg,var(--gold1) 0%,var(--gold2) 100%);color:var(--brdk);
+  border:none;
   border-radius:100px;
-  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:700;
   letter-spacing:0.1em;text-transform:uppercase;
   padding:11px 26px;text-decoration:none;cursor:pointer;
-  transition:background .2s,border-color .2s,color .2s;
-  box-shadow:0 2px 10px rgba(136,98,60,0.25);
+  transition:transform .2s;
+  animation:btnPulseSm 2.2s ease-in-out infinite;
 }
-.nav-btn:hover{background:transparent;color:var(--brcl);border-color:var(--brcl);}
+.nav-btn:hover{transform:translateY(-1px);}
+@keyframes btnPulseSm{0%,100%{box-shadow:0 3px 14px rgba(200,147,46,0.4),0 0 0 0 rgba(200,147,46,0.35);transform:scale(1);}50%{box-shadow:0 3px 20px rgba(200,147,46,0.7),0 0 0 7px rgba(200,147,46,0);transform:scale(1.045);}}
+@media (prefers-reduced-motion:reduce){.nav-btn,.btn-solid{animation:none;}}
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px;background:var(--preto);}
@@ -68,16 +71,17 @@ h1 em{font-style:italic;color:var(--brcl);}
 .btns{display:flex;flex-wrap:wrap;gap:12px;}
 .btn-solid{
   display:inline-flex;align-items:center;gap:9px;
-  background:var(--bronze);color:var(--creme);
-  border:2px solid var(--brcl);
+  background:linear-gradient(135deg,var(--gold1) 0%,var(--gold2) 100%);color:var(--brdk);
+  border:none;
   border-radius:100px;
-  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:700;
   letter-spacing:0.1em;text-transform:uppercase;
   padding:14px 30px;text-decoration:none;cursor:pointer;
-  transition:background .2s,border-color .2s;
-  box-shadow:0 2px 12px rgba(136,98,60,0.3);
+  transition:transform .2s;
+  animation:btnPulseLg 2.2s ease-in-out infinite;
 }
-.btn-solid:hover{background:var(--brdk);border-color:var(--bronze);}
+.btn-solid:hover{transform:translateY(-1px);}
+@keyframes btnPulseLg{0%,100%{box-shadow:0 6px 26px rgba(200,147,46,0.55),0 0 0 0 rgba(200,147,46,0.35);transform:scale(1);}50%{box-shadow:0 6px 34px rgba(200,147,46,0.8),0 0 0 10px rgba(200,147,46,0);transform:scale(1.035);}}
 .btn-ghost{
   display:inline-flex;align-items:center;
   background:transparent;color:rgba(245,242,236,0.65);
