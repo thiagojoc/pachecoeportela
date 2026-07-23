@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workshop Auxílio Maternidade | Dra. Alinne Pacheco</title>
-<meta name="description" content="Workshop gratuito e ao vivo com a Dra. Alinne Pacheco: descubra se você tem direito ao Auxílio Maternidade, quanto pode receber e como funciona o processo.">
+<title>Workshop Mamãe Protegida | Dra. Alinne Pacheco</title>
+<meta name="description" content="Descubra se você tem direito a receber um benefício do INSS na gravidez, mesmo desempregada. Aula gratuita e ao vivo com a Dra. Alinne Pacheco.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -32,6 +32,15 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(-
   color:var(--creme);
 }
 .hero .eyebrow{color:var(--brcl);display:block;margin-bottom:16px;}
+.selo{
+  display:inline-block;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--brdk);
+  background:linear-gradient(135deg,var(--gold1) 0%,var(--gold2) 100%);
+  border-radius:100px;
+  padding:7px 18px;
+  margin-bottom:20px;
+}
 .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5.5vw,52px);line-height:1.18;max-width:760px;margin:0 auto 18px;color:var(--creme);}
 .hero h1 em{font-style:italic;color:var(--brcl);}
 .hero-sub{font-size:16px;color:#D8CFC2;max-width:560px;margin:0 auto 28px;line-height:1.6;}
@@ -54,6 +63,12 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(-
 .stat-l{font-size:12px;color:#B9AE9E;}
 
 /* SOBRE ALINNE */
+.descobrir{background:var(--branco);padding:56px 24px;text-align:center;}
+.descobrir .eyebrow{display:block;margin-bottom:26px;}
+.descobrir-list{list-style:none;padding:0;margin:0 auto;max-width:620px;text-align:left;display:flex;flex-direction:column;gap:16px;}
+.descobrir-list li{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:var(--txt);line-height:1.55;}
+.descobrir-list .check{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--creme2);color:var(--bronze);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+
 .sobre{padding:64px 24px;display:grid;grid-template-columns:280px 1fr;gap:44px;align-items:center;}
 .sobre-foto{width:100%;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(18,16,13,0.35);}
 .sobre-foto img{width:100%;display:block;}
@@ -128,15 +143,25 @@ footer{font-size:12px;color:var(--txtcl);text-align:center;padding:26px;}
 <body>
 
 <section class="hero">
-  <span class="eyebrow">Auxílio Maternidade</span>
-  <h1>Você sabe se tem direito ao <em>Auxílio Maternidade?</em></h1>
-  <p class="hero-sub">Workshop ao vivo e gratuito com a Dra. Alinne Pacheco: quem tem direito, quanto pode receber e como funciona todo o processo, do início ao fim.</p>
-  <a class="btn-solid" href="#form">Garantir minha vaga</a>
+  <span class="selo">Workshop Mamãe Protegida</span>
+  <h1>Descubra se você tem direito a receber um benefício do INSS <em>na gravidez</em></h1>
+  <p class="hero-sub">E veja como solicitar, mesmo estando desempregada. Aula gratuita e ao vivo no dia 30/07 às 19h30, com especialistas em direito previdenciário.</p>
+  <a class="btn-solid" href="#form">Quero garantir minha vaga gratuita</a>
   <div class="stats">
     <div class="stat"><div class="stat-n">550+</div><div class="stat-l">Casos atendidos</div></div>
     <div class="stat"><div class="stat-n">80%</div><div class="stat-l">Taxa de aprovação</div></div>
     <div class="stat"><div class="stat-n">30/07</div><div class="stat-l">19h30 · Google Meet</div></div>
   </div>
+</section>
+
+<section class="descobrir">
+  <span class="eyebrow">Nesse workshop, você vai descobrir</span>
+  <ul class="descobrir-list">
+    <li><span class="check">✓</span>Se você tem direito ao auxílio-maternidade mesmo desempregada</li>
+    <li><span class="check">✓</span>Como funciona se você já é empregada (o valor pode ser diferente do que você imagina)</li>
+    <li><span class="check">✓</span>Se você teve um filho nos últimos 5 anos e não solicitou na época, pode ainda dar tempo de receber</li>
+    <li><span class="check">✓</span>Os erros mais comuns que fazem mulheres perderem esse direito</li>
+  </ul>
 </section>
 
 <div class="section sobre">
@@ -163,7 +188,7 @@ footer{font-size:12px;color:var(--txtcl);text-align:center;padding:26px;}
   <div class="form-hd">
     <span class="eyebrow">Garanta sua vaga</span>
     <h2>Inscreva-se no workshop</h2>
-    <p>Vagas limitadas. Preencha seus dados e receba o link de acesso pelo WhatsApp.</p>
+    <p>Vagas limitadas. Turma ao vivo, sem gravação disponível depois. Preencha seus dados e receba o link de acesso pelo WhatsApp.</p>
     <div class="meta-row">
       <span class="meta-badge">📅 30/07</span>
       <span class="meta-badge">🕖 19h30</span>
@@ -192,7 +217,7 @@ footer{font-size:12px;color:var(--txtcl);text-align:center;padding:26px;}
         </div>
         <div class="err-msg" id="err-categoria">Selecione uma opção.</div>
       </div>
-      <button type="submit" class="btn-solid" id="btn-submit">Quero participar</button>
+      <button type="submit" class="btn-solid" id="btn-submit">Quero garantir minha vaga gratuita</button>
       <p class="priv">Seus dados são usados só pra falarmos com você sobre o workshop. Nada de spam.</p>
     </form>
   </div>
