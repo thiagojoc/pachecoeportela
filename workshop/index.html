@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Auxílio Maternidade | Pacheco &amp; Portela Advocacia</title>
+<meta name="description" content="Workshop gratuito e ao vivo: descubra se você tem direito ao Auxílio Maternidade, quanto pode receber e como funciona o processo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#F5F2EC; --creme2:#EDE8DF;
+  --bronze:#88623C; --brcl:#C0A882; --brdk:#5C3B1C;
+  --preto:#12100D;
+  --marrom:#3D2B18;
+  --txt:#3A3028; --txtcl:#7A6D60;
+  --branco:#FFFFFF;
+  --gold1:#F3CC7A; --gold2:#C8932E;
+  --erro:#B23A3A;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(--txt);-webkit-font-smoothing:antialiased;}
+.wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:32px 18px 60px;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:14px;text-align:center;}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,5vw,42px);line-height:1.18;text-align:center;color:var(--preto);max-width:640px;margin:0 0 14px;}
+.sub{font-size:15px;color:var(--txtcl);text-align:center;max-width:520px;margin:0 0 8px;line-height:1.6;}
+.meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 30px;}
+.meta-badge{font-size:12px;font-weight:600;color:var(--brdk);background:var(--creme2);border:1px solid var(--brcl);border-radius:100px;padding:7px 15px;}
+
+.card{
+  width:100%;max-width:440px;
+  background:var(--branco);
+  border:1px solid var(--brcl)55;
+  border-radius:20px;
+  padding:30px 26px;
+  box-shadow:0 20px 50px -20px rgba(18,16,13,0.25);
+}
+.card h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--preto);margin:0 0 20px;text-align:center;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--txtcl);margin-bottom:6px;}
+.fi{
+  width:100%;
+  padding:12px 14px;
+  border:1.5px solid var(--creme2);
+  background:var(--creme);
+  border-radius:10px;
+  font-family:'Inter',sans-serif;
+  font-size:15px;
+  color:var(--txt);
+  outline:none;
+  transition:border-color .15s;
+}
+.fi:focus{border-color:var(--bronze);}
+.fi.err{border-color:var(--erro);}
+.radio-group{display:flex;flex-direction:column;gap:9px;}
+.radio-opt{
+  display:flex;align-items:center;gap:10px;
+  border:1.5px solid var(--creme2);
+  border-radius:10px;
+  padding:12px 14px;
+  cursor:pointer;
+  transition:border-color .15s,background .15s;
+}
+.radio-opt:has(input:checked){border-color:var(--bronze);background:var(--creme2);}
+.radio-opt input{width:17px;height:17px;accent-color:var(--bronze);flex-shrink:0;}
+.radio-opt span{font-size:14px;color:var(--txt);}
+.err-msg{font-size:12px;color:var(--erro);margin-top:5px;display:none;}
+.err-msg.show{display:block;}
+
+.btn-solid{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  width:100%;
+  background:linear-gradient(135deg,var(--gold1) 0%,var(--gold2) 100%);color:var(--brdk);
+  border:none;
+  border-radius:100px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:15px 20px;text-decoration:none;cursor:pointer;
+  transition:transform .2s;
+  animation:btnPulseLg 2.2s ease-in-out infinite;
+  margin-top:6px;
+}
+.btn-solid:hover{transform:translateY(-1px);}
+.btn-solid:disabled{opacity:.7;cursor:default;animation:none;}
+@keyframes btnPulseLg{0%,100%{box-shadow:0 6px 26px rgba(200,147,46,0.55),0 0 0 0 rgba(200,147,46,0.35);transform:scale(1);}50%{box-shadow:0 6px 34px rgba(200,147,46,0.8),0 0 0 10px rgba(200,147,46,0);transform:scale(1.035);}}
+@media (prefers-reduced-motion:reduce){.btn-solid{animation:none;}}
+
+.priv{font-size:11px;color:var(--txtcl);text-align:center;margin-top:14px;line-height:1.5;}
+footer{font-size:11px;color:var(--txtcl);text-align:center;margin-top:34px;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="eyebrow">Pacheco &amp; Portela Advocacia</div>
+  <h1>Descubra se você tem direito ao Auxílio Maternidade</h1>
+  <p class="sub">Workshop ao vivo e gratuito com a Dra. Alinne, advogada especialista no assunto: quem tem direito, quanto pode receber e como funciona todo o processo.</p>
+  <div class="meta-row">
+    <span class="meta-badge">📅 30/07</span>
+    <span class="meta-badge">🕖 19h30</span>
+    <span class="meta-badge">💻 Google Meet</span>
+    <span class="meta-badge">🎁 Gratuito</span>
+  </div>
+
+  <div class="card">
+    <h2>Garanta sua vaga</h2>
+    <form id="lp-form" novalidate>
+      <div class="fg">
+        <label for="f-nome">Nome</label>
+        <input class="fi" id="f-nome" name="nome" type="text" placeholder="Seu nome completo" autocomplete="name">
+        <div class="err-msg" id="err-nome">Preencha seu nome.</div>
+      </div>
+      <div class="fg">
+        <label for="f-whats">WhatsApp</label>
+        <input class="fi" id="f-whats" name="whatsapp" type="tel" placeholder="(00) 00000-0000" inputmode="numeric" autocomplete="tel">
+        <div class="err-msg" id="err-whats">Informe um WhatsApp válido.</div>
+      </div>
+      <div class="fg">
+        <label>Você é:</label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="categoria" value="gestante"><span>Gestante</span></label>
+          <label class="radio-opt"><input type="radio" name="categoria" value="filho_pequeno"><span>Tenho filho(a) menor que 5 anos</span></label>
+        </div>
+        <div class="err-msg" id="err-categoria">Selecione uma opção.</div>
+      </div>
+      <button type="submit" class="btn-solid" id="btn-submit">Quero participar</button>
+      <p class="priv">Seus dados são usados só pra falarmos com você sobre o workshop. Nada de spam.</p>
+    </form>
+  </div>
+
+  <footer>Pacheco &amp; Portela Advocacia</footer>
+</div>
+
+<script src="../workshop.js"></script>
+</body>
+</html>
