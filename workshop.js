@@ -28,8 +28,8 @@
       var nomeInput = document.getElementById("f-nome");
       var nome = nomeInput.value.trim();
       var whats = whatsInput ? whatsInput.value.replace(/\D/g, "") : "";
-      var categoriaEl = form.querySelector('input[name="categoria"]:checked');
-      var categoria = categoriaEl ? categoriaEl.value : "";
+      var categoriaEls = form.querySelectorAll('input[name="categoria"]:checked');
+      var categorias = Array.prototype.map.call(categoriaEls, function(el){ return el.value; });
 
       var ok = true;
       var nomeOk = !!nome;
@@ -42,8 +42,8 @@
       document.getElementById("err-whats").classList.toggle("show", !whatsOk);
       if(!whatsOk) ok = false;
 
-      document.getElementById("err-categoria").classList.toggle("show", !categoria);
-      if(!categoria) ok = false;
+      document.getElementById("err-categoria").classList.toggle("show", !categorias.length);
+      if(!categorias.length) ok = false;
 
       if(!ok) return;
 
@@ -51,11 +51,12 @@
       btn.disabled = true;
       btn.textContent = "Enviando...";
 
+      var categoriaTags = categorias.map(function(c){ return c === "gestante" ? "gestante" : "tem-filho-pequeno"; });
       var payload = {
         nome: nome,
         whatsapp: whats,
-        categoria: categoria,
-        tags: ["anuncio", "workshop-auxilio-maternidade", categoria === "gestante" ? "gestante" : "tem-filho-pequeno"],
+        categoria: categorias.join(","),
+        tags: ["anuncio", "workshop-auxilio-maternidade"].concat(categoriaTags),
         origem: "LP Workshop Auxilio Maternidade",
         workshop_data: "2026-07-30",
         workshop_horario: "19:30"
