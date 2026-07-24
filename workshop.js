@@ -58,7 +58,7 @@
         categoria: categorias.join(","),
         tags: ["anuncio", "workshop-auxilio-maternidade"].concat(categoriaTags),
         origem: "LP Workshop Auxilio Maternidade",
-        workshop_data: "2026-07-30",
+        workshop_data: "2026-07-29",
         workshop_horario: "19:30"
       };
 
