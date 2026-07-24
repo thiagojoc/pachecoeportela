@@ -1,5 +1,6 @@
 (function(){
   var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/FmpUEamfD83qBSyayaq9/webhook-trigger/f59372c1-ba3a-4db8-8631-16eafec98d03";
+  var SHEET_URL = "https://script.google.com/macros/s/AKfycbzMA1ciT486HBIGRiTRm7Um-zPAo14ohantBNqHVkLLGJc87y4FK7Nn6z6ewqhPnPvxdQ/exec";
 
   function maskPhone(v){
     v = v.replace(/\D/g, "").slice(0, 11);
@@ -63,22 +64,35 @@
         window.location.href = "./obrigado/";
       }
 
-      if(!WEBHOOK_URL || WEBHOOK_URL.indexOf("COLOQUE_AQUI") === 0){
-        console.warn("Webhook do GHL ainda não configurado (workshop.js). Lead não foi enviado:", payload);
-        goToThankYou();
-        return;
+      var envios = [];
+
+      if(WEBHOOK_URL && WEBHOOK_URL.indexOf("COLOQUE_AQUI") !== 0){
+        envios.push(fetch(WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).catch(function(err){
+          console.warn("Falha ao enviar lead pro webhook do GHL, seguindo mesmo assim.", err);
+        }));
+      } else {
+        console.warn("Webhook do GHL ainda não configurado (workshop.js). Lead não foi enviado pro GHL:", payload);
       }
 
-      fetch(WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      }).catch(function(err){
-        console.warn("Falha ao enviar lead pro webhook, seguindo mesmo assim.", err);
-      }).finally(function(){
-        goToThankYou();
-      });
+      if(SHEET_URL && SHEET_URL.indexOf("COLOQUE_AQUI") !== 0){
+        envios.push(fetch(SHEET_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload)
+        }).catch(function(err){
+          console.warn("Falha ao enviar lead pra planilha, seguindo mesmo assim.", err);
+        }));
+      } else {
+        console.warn("URL da planilha ainda não configurada (workshop.js). Lead não foi enviado pra planilha:", payload);
+      }
+
+      Promise.all(envios).finally(goToThankYou);
     });
   });
 })();
