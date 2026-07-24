@@ -1,8 +1,5 @@
 (function(){
-  // Cole aqui a URL do Webhook de entrada criado no GHL (Workflows > gatilho
-  // "Inbound Webhook"). Enquanto ficar com o valor abaixo, o formulário só
-  // avisa no console e segue pra página de obrigado sem enviar o lead.
-  var WEBHOOK_URL = "COLOQUE_AQUI_A_URL_DO_WEBHOOK_DO_GHL";
+  var WEBHOOK_URL = https://services.leadconnectorhq.com/hooks/FmpUEamfD83qBSyayaq9/webhook-trigger/f59372c1-ba3a-4db8-8631-16eafec98d03;
 
   function maskPhone(v){
     v = v.replace(/\D/g, "").slice(0, 11);
