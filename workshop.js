@@ -1,5 +1,5 @@
 (function(){
-  var WEBHOOK_URL = https://services.leadconnectorhq.com/hooks/FmpUEamfD83qBSyayaq9/webhook-trigger/f59372c1-ba3a-4db8-8631-16eafec98d03;
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/FmpUEamfD83qBSyayaq9/webhook-trigger/f59372c1-ba3a-4db8-8631-16eafec98d03";
 
   function maskPhone(v){
     v = v.replace(/\D/g, "").slice(0, 11);
