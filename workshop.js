@@ -69,7 +69,6 @@
       if(WEBHOOK_URL && WEBHOOK_URL.indexOf("COLOQUE_AQUI") !== 0){
         envios.push(fetch(WEBHOOK_URL, {
           method: "POST",
-          mode: "no-cors",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         }).catch(function(err){
