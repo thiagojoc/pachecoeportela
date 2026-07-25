@@ -10,11 +10,6 @@
     return v;
   }
 
-  function maskDdi(v){
-    var digits = v.replace(/\D/g, "").slice(0, 3);
-    return digits ? "+" + digits : "+";
-  }
-
   document.addEventListener("DOMContentLoaded", function(){
     var form = document.getElementById("lp-form");
     if(!form) return;
@@ -23,14 +18,6 @@
     if(whatsInput){
       whatsInput.addEventListener("input", function(){
         this.value = maskPhone(this.value);
-      });
-    }
-    if(ddiInput){
-      ddiInput.addEventListener("input", function(){
-        this.value = maskDdi(this.value);
-      });
-      ddiInput.addEventListener("blur", function(){
-        if(this.value === "+") this.value = "+55";
       });
     }
 
