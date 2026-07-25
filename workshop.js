@@ -10,13 +10,27 @@
     return v;
   }
 
+  function maskDdi(v){
+    var digits = v.replace(/\D/g, "").slice(0, 3);
+    return digits ? "+" + digits : "+";
+  }
+
   document.addEventListener("DOMContentLoaded", function(){
     var form = document.getElementById("lp-form");
     if(!form) return;
     var whatsInput = document.getElementById("f-whats");
+    var ddiInput = document.getElementById("f-ddi");
     if(whatsInput){
       whatsInput.addEventListener("input", function(){
         this.value = maskPhone(this.value);
+      });
+    }
+    if(ddiInput){
+      ddiInput.addEventListener("input", function(){
+        this.value = maskDdi(this.value);
+      });
+      ddiInput.addEventListener("blur", function(){
+        if(this.value === "+") this.value = "+55";
       });
     }
 
@@ -25,7 +39,13 @@
 
       var nomeInput = document.getElementById("f-nome");
       var nome = nomeInput.value.trim();
-      var whats = whatsInput ? whatsInput.value.replace(/\D/g, "") : "";
+      var whatsDigits = whatsInput ? whatsInput.value.replace(/\D/g, "") : "";
+      var ddiDigits = ddiInput ? ddiInput.value.replace(/\D/g, "") : "55";
+      // Numero brasileiro (o padrao) segue exatamente como antes, sem o
+      // codigo do pais no payload, pra nao mudar o que ja chega certo no
+      // GHL e na planilha. So inclui o DDI quando alguem troca pra um
+      // numero de fora, ai sim precisa vir explicito.
+      var whats = ddiDigits === "55" ? whatsDigits : (ddiDigits + whatsDigits);
       var categoriaEls = form.querySelectorAll('input[name="categoria"]:checked');
       var categorias = Array.prototype.map.call(categoriaEls, function(el){ return el.value; });
 
@@ -35,7 +55,7 @@
       document.getElementById("err-nome").classList.toggle("show", !nomeOk);
       if(!nomeOk) ok = false;
 
-      var whatsOk = whats.length >= 10;
+      var whatsOk = ddiDigits === "55" ? whatsDigits.length >= 10 : whatsDigits.length >= 8;
       whatsInput.classList.toggle("err", !whatsOk);
       document.getElementById("err-whats").classList.toggle("show", !whatsOk);
       if(!whatsOk) ok = false;
