@@ -39,12 +39,12 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(-
 
 /* HERO */
 .hero{
-  background:linear-gradient(180deg,var(--preto) 0%,var(--marrom) 100%);
+  background:var(--creme);
   padding:52px 24px 60px;
   text-align:center;
-  color:var(--creme);
+  color:var(--txt);
 }
-.hero .eyebrow{color:var(--brcl);display:block;margin-bottom:16px;}
+.hero .eyebrow{color:var(--bronze);display:block;margin-bottom:16px;}
 .selo{
   display:inline-block;
   font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
@@ -54,9 +54,9 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(-
   padding:7px 18px;
   margin-bottom:20px;
 }
-.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5.5vw,52px);line-height:1.18;max-width:760px;margin:0 auto 18px;color:var(--creme);}
-.hero h1 em{font-style:italic;color:var(--brcl);}
-.hero-sub{font-size:16px;color:#D8CFC2;max-width:560px;margin:0 auto 28px;line-height:1.6;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5.5vw,52px);line-height:1.18;max-width:760px;margin:0 auto 18px;color:var(--txt);}
+.hero h1 em{font-style:italic;color:var(--bronze);}
+.hero-sub{font-size:16px;color:var(--txtcl);max-width:560px;margin:0 auto 28px;line-height:1.6;}
 .btn-solid{
   display:inline-flex;align-items:center;gap:9px;
   background:linear-gradient(135deg,var(--gold1) 0%,var(--gold2) 100%);color:var(--brdk);
@@ -72,8 +72,8 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(-
 @keyframes btnPulseLg{0%,100%{box-shadow:0 6px 26px rgba(200,147,46,0.55),0 0 0 0 rgba(200,147,46,0.35);transform:scale(1);}50%{box-shadow:0 6px 34px rgba(200,147,46,0.8),0 0 0 10px rgba(200,147,46,0);transform:scale(1.035);}}
 @media (prefers-reduced-motion:reduce){.btn-solid{animation:none;}}
 .stats{display:flex;justify-content:center;gap:40px;margin-top:40px;flex-wrap:wrap;}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--brcl);line-height:1;}
-.stat-l{font-size:12px;color:#B9AE9E;margin-bottom:6px;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--bronze);line-height:1;display:flex;align-items:center;gap:7px;}
+.stat-l{font-size:12px;color:var(--txtcl);margin-bottom:6px;}
 
 /* SOBRE ALINNE */
 .descobrir{background:var(--branco);padding:56px 24px;text-align:center;}
@@ -175,14 +175,14 @@ footer{background:var(--preto);padding:36px 7%;display:flex;align-items:center;f
 <body>
 
 <section class="hero">
-  <span class="selo">Workshop Auxílio Maternidade</span>
-  <h1>Descubra se você tem direito a receber um benefício do INSS <em>na gravidez</em></h1>
-  <p class="hero-sub">E veja como solicitar, mesmo estando desempregada. Aula gratuita e ao vivo no dia 29/07 às 19h30, com especialistas em direito previdenciário.</p>
+  <span class="selo">Exclusivo para gestantes e mães de crianças até 5 anos</span>
+  <h1>Aula gratuita de como conseguir o <em>auxílio-maternidade</em></h1>
+  <p class="hero-sub">Descubra se você tem direito de receber mais de 6 mil reais e como solicitar este auxílio do INSS, mesmo estando desempregada.</p>
   <a class="btn-solid" href="#form">Quero garantir minha vaga gratuita</a>
   <div class="stats">
-    <div class="stat"><div class="stat-l">Local</div><div class="stat-n">Google Meet</div></div>
-    <div class="stat"><div class="stat-l">Horário</div><div class="stat-n">19h30</div></div>
-    <div class="stat"><div class="stat-l">Data</div><div class="stat-n">29/07</div></div>
+    <div class="stat"><div class="stat-l">Local</div><div class="stat-n">📍 Google Meet</div></div>
+    <div class="stat"><div class="stat-l">Horário</div><div class="stat-n">🕖 19h30</div></div>
+    <div class="stat"><div class="stat-l">Data</div><div class="stat-n">📅 Quarta-feira 29/07</div></div>
   </div>
 </section>
 
