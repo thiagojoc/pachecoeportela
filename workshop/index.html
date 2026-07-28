@@ -19,7 +19,10 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=850346708002630&amp;ev=PageView&amp;noscript=1" /></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --creme:#F5F2EC; --creme2:#EDE8DF;
@@ -93,7 +96,7 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--creme);color:var(-
 .sobre-foto img{width:100%;display:block;}
 .sobre-nome{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;color:var(--preto);margin:14px 0 2px;}
 .sobre-cargo{font-size:13px;color:var(--txtcl);margin-bottom:4px;}
-.sobre-oab{font-size:11.5px;color:var(--txtcl);opacity:.75;margin-bottom:16px;}
+.sobre-oab{font-size:11.5px;color:#655A4E;margin-bottom:16px;}
 .sobre-bio{font-size:14.5px;color:var(--txt);line-height:1.65;margin:0 0 20px;}
 .sobre-quote-box{border-left:3px solid var(--brcl);padding-left:16px;margin-bottom:18px;}
 .sobre-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--marrom);line-height:1.5;}
@@ -187,6 +190,7 @@ footer{background:var(--preto);padding:36px 7%;display:flex;align-items:center;f
 </head>
 <body>
 
+<main>
 <section class="hero">
   <img class="hero-bg-photo" src="img/hero-desktop.webp" alt="Dra. Alinne Pacheco" width="1200" height="800">
   <div class="hero-bg-fade"></div>
@@ -474,6 +478,7 @@ footer{background:var(--preto);padding:36px 7%;display:flex;align-items:center;f
     </form>
   </div>
 </div>
+</main>
 
 <footer>
   <div class="ft-esq">
